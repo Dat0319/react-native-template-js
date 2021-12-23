@@ -29,3 +29,15 @@ run init project from server company use curl:
 sh rn_core.sh
 
 ```
+
+### Fix flipper with high ios version
+
+((!defined(TARGET*OS_OSX) || TARGET_OS_OSX)
+&& (MAC_OS_X_VERSION_MIN_REQUIRED MAC_OS_X_VERSION_10_15)) ||
+(TARGET_OS_IPHONE & (**IPHONE_OS_VERSION_MIN_REQUIRED < **IPHONE_12*)
+
+follow [link](https://github.com/facebook/flipper/issues/834#issuecomment-605403957)
+
+```
+https://github.com/facebook/flipper/issues/834#issuecomment-605403957
+```
