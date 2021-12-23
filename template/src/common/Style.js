@@ -1,20 +1,20 @@
 /**
  * Common style for project
- * @author truongnv
+ * @author dattd
  * @since 2020
  * @version 1.0.0
  */
-import { StyleSheet } from "react-native";
-import { getHeight, getWidth } from "./Helper";
+import {StyleSheet} from 'react-native';
+import {getHeight, getWidth} from './Helper';
 
 export const Style = StyleSheet.create({
   iconTabBottom: {
     width: getWidth(23),
     height: getHeight(23),
-    resizeMode: "contain",
+    resizeMode: 'contain',
   },
   validationText: {
-    color: "#dc3545",
+    color: '#dc3545',
   },
 });
 

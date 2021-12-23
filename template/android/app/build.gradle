@@ -136,6 +136,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -152,6 +153,15 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
     }
     buildTypes {
         debug {
@@ -163,6 +173,24 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+
+            // reduce app size
+            shrinkResources true
+            minifyEnabled true
+
+            // config output app
+            applicationVariants.all { variant ->
+            variant.outputs.all {
+                def formattedDate = new Date().format('ddMMyyyy')
+                def flavor = variant.name
+                def versionName = variant.versionName
+                outputFileName = "ShopStreamEnterprise-${formattedDate}-v${versionName}.apk"
+                // output -> ladies-nails17122020.apk
+                // outputFileName = "AppName_${versionName}_${flavor}_${formattedDate}.apk"
+                }
+            }
+            // output -> AppName_release_1_20200121175123.apk
         }
     }
 

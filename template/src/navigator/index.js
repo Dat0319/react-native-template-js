@@ -1,6 +1,6 @@
 /**
  * Navigate stack
- * @author truongnv
+ * @author dattd
  * @since 2020
  * @version 1.0.0
  */
@@ -20,7 +20,7 @@ const TabParentStack = createMaterialTopTabNavigator();
 
 const TabParentStackScreen = () => (
   <TabParentStack.Navigator
-    tabBar={(props) => <TabBar {...props} />}
+    tabBar={props => <TabBar {...props} />}
     initialRouteName={'Trang chủ'}
     swipeEnabled={true}
     lazy={true}
@@ -58,7 +58,7 @@ const TabParentStackScreen = () => (
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
-  <AuthStack.Navigator initialRouteName={''} headerMode={'none'}>
+  <AuthStack.Navigator initialRouteName={''} options={{headerShown: false}}>
     <AuthStack.Screen name={'Splash'} component={Splash} />
   </AuthStack.Navigator>
 );
@@ -69,7 +69,7 @@ class RootStack extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={''} headerMode={'none'}>
+        <Stack.Navigator initialRouteName={''} options={{headerShown: false}}>
           <Stack.Screen name={'Splash'} component={Splash} />
           <Stack.Screen name={'AuthStackScreen'} component={AuthStackScreen} />
           <Stack.Screen

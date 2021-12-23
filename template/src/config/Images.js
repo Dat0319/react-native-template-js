@@ -1,6 +1,6 @@
 /**
  * List all images using on project
- * @author truongnv
+ * @author dattd
  * @since 2020
  * @version 1.0.0
  */

@@ -1,6 +1,6 @@
 /**
  * All common function
- * @author truongnv
+ * @author dattd
  * @since 2020
  * @version 1.0.0
  */
@@ -11,12 +11,12 @@ import {
   Dimensions,
   Linking,
   PixelRatio,
-} from "react-native";
+} from 'react-native';
 import {
   widthPercentageToDP,
   heightPercentageToDP,
-} from "react-native-responsive-screen";
-import { Config } from "@config/index";
+} from 'react-native-responsive-screen';
+import {Config} from '@config/index';
 
 const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 812;
@@ -26,7 +26,7 @@ const iPhoneXs_HEIGHT = 896;
 const iPhoneXsMax_HEIGHT = 896;
 const iPhoneSE_HEIGHT = 568;
 const pixelRatio = PixelRatio.get();
-export const Screen = Dimensions.get("window");
+export const Screen = Dimensions.get('window');
 export const ScreenWidth = Screen.width;
 export const ScreenHeight = Screen.height;
 
@@ -140,7 +140,7 @@ export function getStatusBarHeight() {
 export function parseUrl(url) {
   var match = url.match(
     // eslint-disable-next-line no-useless-escape
-    /^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/
+    /^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/,
   );
   return (
     match && {
@@ -161,12 +161,12 @@ export function openURL(url) {
 }
 
 export function openPhoneCall(phone) {
-  let phoneCall = Platform.OS === "ios" ? "telprompt:" + phone : "tel:" + phone;
+  let phoneCall = Platform.OS === 'ios' ? 'telprompt:' + phone : 'tel:' + phone;
   Linking.openURL(phoneCall);
 }
 
 export function openEmailApp(email) {
-  let emailTo = "mailto:" + email;
+  let emailTo = 'mailto:' + email;
   Linking.openURL(emailTo);
 }
 
@@ -176,7 +176,7 @@ export function isLogin() {
 
 function detection() {
   return (
-    Platform.OS === "ios" &&
+    Platform.OS === 'ios' &&
     !Platform.isPad &&
     !Platform.isTVOS &&
     (isIPhoneX(Screen) ||

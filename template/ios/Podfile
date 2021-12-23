@@ -6,6 +6,12 @@ platform :ios, '10.0'
 target 'HelloWorld' do
   config = use_native_modules!
 
+  # pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
+  #   'TextDetector',
+  #   'FaceDetectorMLKit',
+  #   'BarcodeDetectorMLKit'
+  # ]
+
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
