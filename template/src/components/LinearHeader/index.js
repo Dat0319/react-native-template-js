@@ -194,7 +194,7 @@ export class LinearHeader extends Component {
   }
 }
 
-export default function(props) {
+export default function (props) {
   const navigation = useNavigation();
   return <LinearHeader {...props} navigation={navigation} />;
 }

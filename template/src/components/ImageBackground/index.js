@@ -4,7 +4,7 @@ import {ScreenHeight, ScreenWidth} from '@common/Helper';
 import {Images} from '@config/Images';
 import {ImageBackground} from 'react-native';
 
-const BackGroundKid = (props) => {
+const BackGroundKid = props => {
   return (
     <ImageBackground
       style={{

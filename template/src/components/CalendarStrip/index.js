@@ -121,7 +121,7 @@ class CalendarStrip extends Component {
     }
     const nextSelectedDate = nextProps.selectedDate;
     if (!this.currentPageDatesIncludes(nextSelectedDate)) {
-      const sameDay = (d) => isSameDay(d, nextSelectedDate);
+      const sameDay = d => isSameDay(d, nextSelectedDate);
       if (this.state.dates.find(sameDay)) {
         let selectedIndex = this.state.dates.findIndex(sameDay);
         if (selectedIndex === -1) {
@@ -176,14 +176,14 @@ class CalendarStrip extends Component {
     this._calendar.scrollToIndex({animated, index: 7 * page});
   };
 
-  currentPageDatesIncludes = (date) => {
+  currentPageDatesIncludes = date => {
     const {currentPage} = this.state;
     const currentPageDates = this.state.dates.slice(
       7 * currentPage,
       7 * (currentPage + 1),
     );
     // do not use currentPageDates.includes(date); because can't compare Date in it
-    return !!currentPageDates.find((d) => isSameDay(d, date));
+    return !!currentPageDates.find(d => isSameDay(d, date));
   };
 
   getInitialDates(weekStartsOn = 0) {
@@ -210,7 +210,7 @@ class CalendarStrip extends Component {
     const firstDayOfPrevious2Week = subDays(originalFirstDate, 7 * 2);
     const eachDays = eachDay(firstDayOfPrevious2Week, originalLastDate);
     this.setState(
-      (prevState) => ({
+      prevState => ({
         dates: eachDays,
         currentPage: prevState.currentPage + 2,
         pageOfToday: prevState.pageOfToday + 2,
@@ -247,10 +247,10 @@ class CalendarStrip extends Component {
     );
   };
 
-  _stringToDate = (dateString) => {
+  _stringToDate = dateString => {
     // '2018-01-01' => Date
     const dateArr = dateString.split('-');
-    const [y, m, d] = dateArr.map((ds) => parseInt(ds, 10));
+    const [y, m, d] = dateArr.map(ds => parseInt(ds, 10));
     // CAVEAT: Jan is 0
     return new Date(y, m - 1, d);
   };
@@ -264,14 +264,14 @@ class CalendarStrip extends Component {
       showChineseLunar,
     } = this.props;
     const {currentMonth} = this.state;
-    const marked = markedDate.map((ds) => this._stringToDate(ds));
+    const marked = markedDate.map(ds => this._stringToDate(ds));
     return (
       <View style={styles.container} {...this._panResponder}>
         {/* if this.props.renderHeader is entry we will render it */}
         {this.props.renderHeader && this._renderHeader()}
         <Weeks weekStartsOn={weekStartsOn} />
         <FlatList
-          ref={(ref) => (this._calendar = ref)}
+          ref={ref => (this._calendar = ref)}
           bounces={false}
           horizontal
           pagingEnabled
@@ -297,7 +297,7 @@ class CalendarStrip extends Component {
               showLunar={showChineseLunar}
               onItemPress={() => onPressDate && onPressDate(item)}
               highlight={isSameDay(selectedDate, item)}
-              marked={marked.find((d) => isSameDay(d, item))}
+              marked={marked.find(d => isSameDay(d, item))}
             />
           )}
         />
@@ -310,7 +310,7 @@ class CalendarStrip extends Component {
     );
   }
 
-  momentumEnd = async (event) => {
+  momentumEnd = async event => {
     const {dates} = this.state;
     const firstDayInCalendar = this.state.dates
       ? this.state.dates[0]

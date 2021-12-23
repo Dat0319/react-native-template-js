@@ -154,8 +154,8 @@ const styles = StyleSheet.create({
   // right action
   rightAction: {
     flexDirection: 'row',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 export default styles;

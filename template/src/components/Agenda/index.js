@@ -32,7 +32,7 @@ export default class AgendaScreen extends Component {
     console.log('result', result);
     if (result.data.code === 200) {
       markedDate = result.data.data.data[0].list_day;
-      const obj = markedDate.reduce(function(obj, e) {
+      const obj = markedDate.reduce(function (obj, e) {
         obj[e] = {marked: true};
         return obj;
       }, {});

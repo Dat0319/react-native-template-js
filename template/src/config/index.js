@@ -1,4 +1,4 @@
-import { Config } from "./Config";
-import { Images } from "./Images";
+import {Config} from './Config';
+import {Images} from './Images';
 
-export { Config, Images };
+export {Config, Images};

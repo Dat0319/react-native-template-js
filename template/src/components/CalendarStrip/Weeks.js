@@ -12,7 +12,7 @@ export default ({weekStartsOn}) => {
   ];
   return (
     <View style={styles.wrapWeek}>
-      {weekTransformed.map((day) => (
+      {weekTransformed.map(day => (
         <View style={styles.days} key={day}>
           <Text
             style={[

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.f1,
     color: '#499880',
   },
-  textConfirmOther:{
+  textConfirmOther: {
     fontSize: getHeight(13.33),
     fontFamily: fontFamily.f1,
     color: '#e99d23',

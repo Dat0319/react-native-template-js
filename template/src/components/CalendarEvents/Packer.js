@@ -66,7 +66,7 @@ function populateEvents(events, screenWidth) {
 
   events = events
     .map((ev, index) => ({...ev, index: index}))
-    .sort(function(a, b) {
+    .sort(function (a, b) {
       if (a.start < b.start) return -1;
       if (a.start > b.start) return 1;
       if (a.end < b.end) return -1;
@@ -77,7 +77,7 @@ function populateEvents(events, screenWidth) {
   columns = [];
   lastEnd = null;
 
-  events.forEach(function(ev, index) {
+  events.forEach(function (ev, index) {
     if (lastEnd !== null && ev.start >= lastEnd) {
       pack(columns, screenWidth, calculatedEvents);
       columns = [];

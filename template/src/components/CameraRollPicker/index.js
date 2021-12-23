@@ -186,12 +186,8 @@ class CameraRollPicker extends Component {
 
   renderImage(item) {
     const {selected} = this.state;
-    const {
-      imageMargin,
-      selectedMarker,
-      imagesPerRow,
-      containerWidth,
-    } = this.props;
+    const {imageMargin, selectedMarker, imagesPerRow, containerWidth} =
+      this.props;
 
     const {uri} = item.node.image;
     const isSelected = arrayObjectIndexOf(selected, 'uri', uri) >= 0;

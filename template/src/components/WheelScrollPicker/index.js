@@ -13,31 +13,31 @@ import {
 import {getHeight, getWidth, fontFamily} from '@common/index';
 
 const Container = styled.View`
-  height: ${(props) => props.wrapperHeight}px;
+  height: ${props => props.wrapperHeight}px;
   overflow: hidden;
   align-self: center;
-  width: ${(props) => props.wrapperWidth}px;
-  background-color: ${(props) => props.wrapperBackground};
+  width: ${props => props.wrapperWidth}px;
+  background-color: ${props => props.wrapperBackground};
 `;
 export const HighLightView = styled.View`
   position: absolute;
-  top: ${(props) => (props.wrapperHeight - props.itemHeight) / 2}px;
-  height: ${(props) => props.itemHeight}px;
-  width: ${(props) => props.highlightWidth}px;
-  border-top-color: ${(props) => props.highlightColor};
-  border-bottom-color: ${(props) => props.highlightColor};
-  border-top-width: ${(props) => props.highlightBorderWidth}px;
-  border-bottom-width: ${(props) => props.highlightBorderWidth}px;
+  top: ${props => (props.wrapperHeight - props.itemHeight) / 2}px;
+  height: ${props => props.itemHeight}px;
+  width: ${props => props.highlightWidth}px;
+  border-top-color: ${props => props.highlightColor};
+  border-bottom-color: ${props => props.highlightColor};
+  border-top-width: ${props => props.highlightBorderWidth}px;
+  border-bottom-width: ${props => props.highlightBorderWidth}px;
 `;
 export const SelectedItem = styled.View`
   justify-content: center;
   align-items: center;
-  height: ${(props) => props.itemHeight}px;
+  height: ${props => props.itemHeight}px;
 `;
 export const ItemText = styled.Text`
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.fontSize}px;
-  line-height: ${(props) => props.lineHeight}px;
+  color: ${props => props.color};
+  font-size: ${props => props.fontSize}px;
+  line-height: ${props => props.lineHeight}px;
   text-align: center;
 `;
 const deviceWidth = Dimensions.get('window').width;
@@ -92,7 +92,7 @@ export default class ScrollPicker extends React.Component {
             highlightBorderWidth={this.props.highlightBorderWidth}
           />
           <ScrollView
-            ref={(sview) => {
+            ref={sview => {
               this.sview = sview;
             }}
             bounces={false}

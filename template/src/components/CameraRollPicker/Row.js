@@ -18,12 +18,8 @@ class Row extends PureComponent {
   }
 
   renderImage(item, isSelected) {
-    const {
-      imageMargin,
-      selectedMarker,
-      imagesPerRow,
-      containerWidth,
-    } = this.props;
+    const {imageMargin, selectedMarker, imagesPerRow, containerWidth} =
+      this.props;
 
     const {uri} = item.node.image;
 

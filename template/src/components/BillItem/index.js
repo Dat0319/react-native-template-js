@@ -38,7 +38,7 @@ class BillItem extends Component {
   }
 }
 
-export default function(props) {
+export default function (props) {
   const navigation = useNavigation();
   return <BillItem {...props} navigation={navigation} />;
 }

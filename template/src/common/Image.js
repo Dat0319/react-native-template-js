@@ -1,7 +1,7 @@
 import ImagePicker from 'react-native-image-picker';
 /**
  * Image Picker from Local Library
- * @author ntit365
+ * @author dattd
  * @param title
  * @param cb
  */

@@ -22,7 +22,7 @@ export class BWebView extends Component {
   }
 
   //switch interface
-  switchInterface = (val) => {
+  switchInterface = val => {
     switch (val.act) {
       case 'openURL':
         openURL(val.url);
@@ -48,7 +48,7 @@ export class BWebView extends Component {
     }
   };
 
-  showDetail = (val) => {
+  showDetail = val => {
     this.props.navigation.push('Webview', {
       url: val.link,
       show_header: val.show_header,
@@ -77,7 +77,7 @@ export class BWebView extends Component {
           source={{uri: this.props.url + '/0', headers: headersWeb}}
           injectedJavaScript={scriptImport}
           javaScriptEnabled={true}
-          onMessage={(event) => {
+          onMessage={event => {
             this.switchInterface(JSON.parse(event.nativeEvent.data));
           }}
           onLoadEnd={() => {
