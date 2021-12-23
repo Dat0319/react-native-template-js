@@ -1,0 +1,25 @@
+{
+  "name": "react-native-template-js",
+  "version": "0.0.1",
+  "description": "React Native template for js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dat0319/react-native-template-js.git"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Dat Tran <dattran0319@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dat0319/react-native-template-js/issues"
+  },
+  "homepage": "https://github.com/Dat0319/react-native-template-js#readme"
+}
